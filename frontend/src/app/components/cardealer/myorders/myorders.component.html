@@ -1,0 +1,36 @@
+<app-dashboard></app-dashboard>
+<div class="outer">
+  <h2>All Orders</h2>
+
+  <div class="row ">
+    <form [formGroup]="changeStatusForm" (ngSubmit)="changeStatus()">
+    <div class="col-lg-12 col-md-12 mb-4 p-10" *ngFor="let booking of bookings; let i=index">
+      <div class="card h-100" (click)="booking.showDetails = !booking.showDetails">
+        <!-- <img class="card-img-top" src="{{booking.car.image}}" alt="loading"> -->
+        <div class="card-body">
+          <h5 class="card-title">{{i+1}} . {{booking.car.carName}}</h5>
+          <p class="card-text" >Total Price: <span style="font-family: 'Roboto';font-weight: bolder;">₹ {{booking.price}}</span>  </p>
+          <p class="card-text" ><i class="bi bi-chevron-double-down"> <span style="border-bottom: 2px double goldenrod;">Click here to view complete details</span> </i> </p>
+        </div>
+        <ul class="list-group list-group-flush" *ngIf="booking.showDetails">
+          <li class="list-group-item" style="background-color: black; color:white">Booking Details: <i class="bi bi-patch-check-fill"></i></li>
+          <li class="list-group-item">Cancellation Price : <span style="font-family: 'Roboto';font-weight: 500;">₹ {{booking.car.cancellation}}</span></li>
+          <li class="list-group-item">From Date : <span style="font-family: 'Roboto';font-weight: 500;">{{booking.fromDate}}</span></li>
+          <li class="list-group-item">To Date : <span style="font-family: 'Roboto';font-weight: 500;">{{booking.toDate}}</span></li>
+          <li class="list-group-item">Order Request By : <span style="font-family: 'Roboto';font-weight: 500;">{{booking.user.email}}</span></li>
+          <li class="list-group-item">Customer Contact number: <span style="font-family: 'Roboto';font-weight: 500;">{{booking.user.phone}}</span></li>
+          <li class="list-group-item">Order created at: <span style="font-family: 'Roboto';font-weight: 500;">{{booking.createdAt}}</span></li>
+        </ul>
+        <ul class="list-group list-group-flush" >
+          <li class="list-group-item">Status : <span style="font-family: 'Roboto';"><input type="text" value="{{booking.status}}" readonly></span></li>
+          <li class="list-group-item">Confirm Status : <span style="font-family: 'Roboto';"><input type="text"formControlName="status" value="{{booking.status}}"></span> <i class="bi bi-box-arrow-in-right"></i></li>
+        </ul>
+        <div class="card-body" *ngIf="booking.showDetails">
+          <button class="card-link" type="submit" (click)="getCurrentBookingId(booking.id); $event.stopPropagation()">Change status</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+
+</div>

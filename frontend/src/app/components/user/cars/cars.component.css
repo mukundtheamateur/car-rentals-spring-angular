@@ -1,0 +1,165 @@
+/* @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css"); */
+
+div.outer{
+  color: white;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 2.5%;
+  background-color: rgba(0,0,0,0.9);
+  width: 70vw;
+  border-radius: 10px;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  box-shadow: -2px 2px 10px 10px rgba(218, 165, 32, 0.2);
+
+  padding: 10px;
+}
+h2{
+  margin-bottom: 20px;
+}
+.card:hover  {
+  transform: scale(1.02);
+  transition: transform 0.2s ease-out;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(253, 230, 196, 0.79) 99%, rgba(0,0,0,1) 100%);
+  color: white;
+}
+.card:hover ul>li{
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(253, 230, 196, 0.79) 99%, rgba(0,0,0,1) 100%);
+  color: white;
+}
+.card:hover button{
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(253, 230, 196, 0.79) 80%, rgba(0,0,0,1) 100%);
+  color: white;
+}
+.card {
+  transition: transform 0.2s ease-in;
+  min-width: 250px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: contain;
+
+}
+
+.list-group-item:hover{
+
+  background-color: goldenrod;
+  color: white;
+  box-shadow: -2px 2px 10px 10px rgba(218, 165, 32, 0.2);
+}
+button{
+  background-color: rgba(255, 255, 255,0.5);
+  color: goldenrod;
+  /* border: 3px double goldenrod; */
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: -2px 2px 5px 5px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .list-group {
+    display: none;
+  }
+}
+
+
+div.filter-container {
+  position: fixed;
+  top: 25%;
+  right: 0%;
+  /* height: 60%; */
+  width: 14%;
+  min-width: 150px;
+  background: none repeat scroll 0 0 #0099ff;
+  color: white;
+  padding: 20px 10px;
+  background: rgba(0, 0, 0, 1);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+div.filterBox {
+  position: fixed;
+  top: 15%;
+  right: 0%;
+  min-width: 50px;
+  /* height: 60%; */
+  background: none repeat scroll 0 0 #0099ff;
+  color: white;
+  padding: 20px 10px;
+  background: rgba(0, 0, 0, 1);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.active{
+  border-bottom: 5px double goldenrod ;
+  border-radius: 5px;
+
+}
+div.sidebar a#justify-icon {
+  outline: 0;
+  color: white;
+  font-size: 24px;
+  font-family:kollektif, Roboto, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  margin-right: 3px;
+}
+div.sidebar ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 60px;
+}
+div.sidebar ul li {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+
+  list-style-type: none;
+}
+div.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+.expanded-element{
+  margin-left: 4px;
+}
+.collapsed-element{
+  margin-left: 6px;
+}
+
+input, .filterButton{
+  margin: auto;
+  width: 10vw;
+  min-width: 100px;
+}
+.filterButton{
+    color: white;
+    font-weight: 300;
+    background-color: rgb(0, 0, 0);
+    border: 2px double goldenrod;
+    margin-top: 5px ;
+}
+.blur {
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+
+@media (max-width: 768px) {
+  .expanded-element {
+    display: none;
+  }
+}
+  /* @media screen and (max-width: 700px) {
+    .filter-container {
+      display: none;
+    }
+  } */

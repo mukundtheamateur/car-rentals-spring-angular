@@ -1,0 +1,41 @@
+
+
+
+.quote{
+  font-family: "Playfair Display", sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 112.7px;
+    text-align: left;
+    text-shadow: 1px 1px 2px black, 0 0 1em goldenrod;
+
+    color: white;
+}
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+  /* padding-top: 8vh; */
+  flex-direction: column;
+  gap: 15px;
+}
+.quote-secondary{
+  font-family: "Playfair Display", sans-serif;
+font-size: 24px;
+font-weight: 400;
+line-height: 28.18px;
+text-align: left;
+color: #FEBB24;
+box-shadow: 0px 4px 10px 0px #00000040;
+
+}
+.custom-button{
+  width: 251px;
+height: 48px;
+background: #FFFFFF;
+border-radius: 50px 50px 50px 50px;
+opacity: 0px;
+animation-timing-function: ease-out;
+animation-duration: 300ms;
+}

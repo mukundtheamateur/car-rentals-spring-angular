@@ -1,0 +1,60 @@
+<app-dashboard></app-dashboard>
+
+<div class="outer container" id="outer">
+  <h2 style="text-decoration: underline">Luxury Cars</h2>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let car of cars">
+      <div class="card h-100">
+        <img class="card-img-top" src="{{ car.image }}" alt="loading" />
+        <div class="card-body">
+          <h5 class="card-title">{{ car.carName }}</h5>
+          <p class="card-text">
+            Price:
+            <span style="font-family: 'Roboto'; font-weight: bolder"
+              >₹ {{ car.price }}</span
+            >
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Mileage: {{ car.mileage }} kmph</li>
+          <li class="list-group-item">Cancellation: {{ car.cancellation }}</li>
+          <li class="list-group-item">Fuel: {{ car.fuelType }}</li>
+        </ul>
+        <div class="card-body">
+          <button class="card-link" (click)="bookCar(car.id)">Rent</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="filterBox">
+  <button (click)="toggleSidebar()">
+    <i class="bi bi-filter-square" style="color: white;">  filter</i>
+  </button>
+</div>
+
+<div class="filter-container" *ngIf="showSidebar">
+  <h6>Filter cars:</h6>
+  <form [formGroup]="filterCarNameForm" (ngSubmit)="filterByCarName()">
+    <div class="row">
+      <label for="Model">Model:</label>
+      <input type="text" formControlName="carName" />
+    </div>
+    <div class="row">
+      <button type="submit" class="filterButton">Apply</button>
+    </div>
+  </form>
+  <form [formGroup]="filterForm" (ngSubmit)="filterCars()">
+    <div class="row">
+      <label for="minPrice">Min Price:</label>
+      <input type="text" id="minPrice" formControlName="minPrice" />
+    </div>
+    <div class="row">
+      <label for="maxPrice">Max Price:</label>
+      <input type="text" id="maxPrice" formControlName="maxPrice" />
+    </div>
+    <div class="row">
+      <button type="submit" class="filterButton">Apply</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,56 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
+div.sidebar {
+  position: fixed;
+  top: 20%;
+  left: 0px;
+  height: 60%;
+  background: none repeat scroll 0 0 #0099ff;
+  color: white;
+  padding: 20px 10px;
+  background: rgba(0, 0, 0, 1);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.active{
+  border-bottom: 5px double goldenrod ;
+  border-radius: 5px;
+
+}
+div.sidebar a#justify-icon {
+  outline: 0;
+  color: white;
+  font-size: 24px;
+  font-family:kollektif, Roboto, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  margin-right: 3px;
+}
+div.sidebar ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 60px;
+}
+div.sidebar ul li {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+
+  list-style-type: none;
+}
+div.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+.expanded-element{
+  margin-left: 4px;
+}
+.collapsed-element{
+  margin-left: 6px;
+}
+
+@media (max-width: 768px) {
+  .expanded-element {
+    display: none;
+  }
+}

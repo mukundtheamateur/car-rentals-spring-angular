@@ -1,0 +1,26 @@
+<app-dashboard></app-dashboard>
+
+<div class="outer container">
+  <h2>My cars</h2>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let car of cars">
+      <div class="card h-100">
+        <img class="card-img-top" src="{{car.image}}" alt="loading">
+        <div class="card-body">
+          <h5 class="card-title">{{car.carName}}</h5>
+          <p class="card-text" >Price: <span>₹ {{car.price}}</span> </p>
+        </div>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Mileage: <span>{{car.mileage}} kmph</span></li>
+          <li class="list-group-item">Cancellation: <span>₹ {{car.cancellation}}</span></li>
+          <li class="list-group-item">Fuel: <span>{{car.fuelType}}</span></li>
+        </ul>
+        <div class="card-body">
+          <button class="card-link" (click)="deleteCar(car.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

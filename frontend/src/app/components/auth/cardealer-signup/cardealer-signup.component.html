@@ -1,0 +1,45 @@
+<div class="signup-box">
+  <h2>CarDealer Signup</h2>
+  <form [formGroup]="carDealerSignupForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+
+      <div class="user-box col">
+        <input type="email" formControlName="email" required="" />
+        <label>Email</label>
+      </div>
+      <div class="user-box col">
+        <input type="password" formControlName="password" required="" />
+        <label>Password</label>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="user-box col">
+        <input type="text" formControlName="dealerName" required="" />
+        <label>Full Name</label>
+      </div>
+      <div class="user-box col">
+        <input type="text" formControlName="phone" required="" />
+        <label>Phone</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="user-box">
+        <input type="text" formControlName="avatar" required="" />
+        <label>Image</label>
+      </div>
+
+      <div class="user-box col">
+        <input type="text" formControlName="allCities" required="" />
+        <label>City</label>
+      </div>
+    </div>
+      <button type="submit" [disabled]="!carDealerSignupForm.valid">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </button>
+  </form>
+</div>

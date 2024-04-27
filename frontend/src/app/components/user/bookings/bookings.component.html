@@ -1,0 +1,118 @@
+<app-dashboard></app-dashboard>
+
+<div class="outer container">
+  <h2 style="text-decoration: underline">Rent this Car</h2>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+        <img class="card-img-top" src="{{ car.image }}" alt="loading" />
+        <div class="card-body">
+          <h5 class="card-title">{{ car.carName }}</h5>
+          <p class="card-text">
+            Price: <span style="color: goldenrod">₹ {{ car.price }}</span>
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Mileage: {{ car.mileage }} kmph</li>
+          <li class="list-group-item">
+            Cancellation:<span style="font-weight: 100">
+              ₹ {{ car.cancellation }}</span
+            >
+          </li>
+          <li class="list-group-item">Fuel: {{ car.fuelType }}</li>
+          <li class="list-group-item">Gearbox: {{ car.gearbox }}</li>
+          <li class="list-group-item">Seats: {{ car.seats }}</li>
+          <li class="list-group-item">Doors: {{ car.doors }}</li>
+          <li class="list-group-item">Fuel Policy: {{ car.fuelpolicy }}</li>
+        </ul>
+        <!-- <div class="card-body">
+          <button class="card-link" (click)="bookCar()">Rent</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <form [formGroup]="bookingForm" (ngSubmit)="bookCar()">
+
+    <h2>Fill details: </h2>
+
+    <div class="row">
+      <div class="user-box col">
+        <label>From Date:</label>
+      </div>
+      <div class="user-box col">
+        <input type="date" formControlName="fromDate" placeholder="From" required="true" />
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="user-box col">
+        <label>To Date:</label>
+      </div>
+      <div class="user-box col">
+        <input type="date" formControlName="toDate" placeholder="From" required="true" />
+      </div>
+    </div>
+    <div *ngIf="bookingForm.errors?.['dateRange']" style="color: red"> Error: From Date must be less than To Date.</div>
+    <div class="row">
+      <div class="user-box">
+        <input
+          type="checkbox"
+          id="cancellation"
+          formControlName="cancellation"
+        />
+        <label for="cancellation">Add Cancellation fee of <span style="color: goldenrod;"> ₹ {{car.cancellation}}</span></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="user-box">
+        <input type="checkbox" id="amendments" formControlName="amendments" />
+        <label for="amendments">Add amendments fee of  <span style="color: goldenrod;"> ₹ {{car.amendments}}</span></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="user-box">
+        <input type="checkbox" id="theftProtection" formControlName="theftProtection" />
+        <label for="theftProtection" >Add theftProtection insurance for  <span style="color: goldenrod;"> ₹ {{car.theftProtection}}</span></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="user-box">
+        <input type="checkbox" id="collisionDamage" formControlName="collisionDamage" />
+        <label for="collisionDamage" >Add collisionDamage insurance for  <span style="color: goldenrod;"> ₹ {{car.collisionDamage}}</span></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="user-box">
+        <input type="checkbox" id="fullInsurance" formControlName="fullInsurance" />
+        <label for="fullInsurance" >Add fullInsurance for  <span style="color: goldenrod;"> ₹ {{car.fullInsurance}}</span></label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="user-box col">
+        <input type="checkbox" id="additionalDriver" formControlName="additionalDriver" />
+        <label for="additionalDriver" >Addtional Driver for  <span style="color: goldenrod;"> ₹ {{car.theftProtection}}</span></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="user-box col">
+        <label>Select pickup address</label>
+      </div>
+      <div class="user-box col">
+        <select name="address" id="address" formControlName="address" >
+            <option value="{{address.id}}" *ngFor="let address of addresses">
+              {{address.pickupAddress}}
+            </option>
+        </select>
+
+      </div>
+    </div>
+    <button type="submit" [disabled]="!bookingForm.valid">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+    </button>
+    </form>
+</div>

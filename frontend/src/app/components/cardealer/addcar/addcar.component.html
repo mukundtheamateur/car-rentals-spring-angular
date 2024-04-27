@@ -1,0 +1,185 @@
+<app-dashboard></app-dashboard>
+
+<div *ngIf="role === 'dealer'">
+  <form [formGroup]="carAddForm" (ngSubmit)="onSubmit()">
+    <div class="outer">
+      <h2>Add Car</h2>
+
+      <div class="row" style="margin-top: 20px">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="dealerName">Car Name:</label>
+            <input
+              type="text"
+              formControlName="carName"
+              value=""
+              required="true"
+            />
+          </div>
+        </div>
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="price">price:</label>
+            <input
+              type="number"
+              formControlName="price"
+              value=""
+              required="true"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="deposit">deposit:</label>
+            <input type="number" formControlName="deposit" value="" />
+          </div>
+        </div>
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="fuelType">fuelType:</label>
+            <input
+              type="text"
+              formControlName="fuelType"
+              value=""
+              required="true"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="gearbox">gearbox:</label>
+            <input
+              type="text"
+              formControlName="gearbox"
+              value=""
+              required="true"
+            />
+          </div>
+        </div>
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="image">image:</label>
+            <input type="text" formControlName="image" value="" required="true" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="gearbox">seats:</label>
+            <input
+              type="number"
+              formControlName="seats"
+              value=""
+              required="true"
+            />
+          </div>
+        </div>
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="doors">doors:</label>
+            <input type="number" formControlName="doors" value="" required="true" />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="fuelpolicy">fuelpolicy:</label>
+            <input
+              type="text"
+              formControlName="fuelpolicy"
+              value=""
+              required="true"
+            />
+          </div>
+        </div>
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="mileage">mileage:</label>
+            <input type="number" formControlName="mileage" value="" required="true" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="cancellation">cancellation:</label>
+            <input
+              type="number"
+              formControlName="cancellation"
+              value=""
+              required="true"
+            />
+          </div>
+        </div>
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="amendments">amendments:</label>
+            <input type="number" formControlName="amendments" value="" required="true" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="cancellation">theftProtection:</label>
+            <input
+              type="number"
+              formControlName="theftProtection"
+              value=""
+              required="true"
+            />
+          </div>
+        </div>
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="collisionDamage">collisionDamage:</label>
+            <input type="number" formControlName="collisionDamage" value="" required="true" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="fullInsurance">fullInsurance:</label>
+            <input
+              type="number"
+              formControlName="fullInsurance"
+              value=""
+              required="true"
+            />
+          </div>
+        </div>
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="additionalDriver">additionalDriver:</label>
+            <input type="number" formControlName="additionalDriver" value="" required="true" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="wheelDrive">wheelDrive:</label>
+            <input
+              type="text"
+              formControlName="wheelDrive"
+              value=""
+              required="true"
+            />
+          </div>
+        </div>
+
+      </div>
+
+
+      <button type="submit">Click here to add Car</button>
+    </div>
+  </form>
+</div>

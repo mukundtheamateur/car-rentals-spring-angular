@@ -1,0 +1,29 @@
+<div class="outer">
+  <div class="login-box">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="user-box">
+        <select formControlName="role" required="" placeholder="select">
+          <option value="1">User</option>
+          <option value="2">Car Dealer</option>
+        </select>
+        <label class="role"> Role: </label>
+      </div>
+      <div class="user-box">
+        <input type="text" formControlName="email" required="true">
+        <label>Email</label>
+      </div>
+      <div class="user-box">
+        <input type="password" formControlName="password" required="true">
+        <label>Password</label>
+      </div>
+      <button type="submit" [disabled]="!loginForm.valid">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

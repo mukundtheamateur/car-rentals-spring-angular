@@ -1,0 +1,138 @@
+<app-dashboard></app-dashboard>
+
+<div *ngIf="userRole === 'user'">
+  <form [formGroup]="userUpdateForm"  (ngSubmit)="onSubmit()">
+    <div class="outer">
+      <div>Edit User profile</div>
+      <div class="img">
+        <img src="{{ user.avatar }}" alt="Image Not loaded" />
+      </div>
+      <div class="row" style="margin-top: 20px">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="fullname">Name:</label>
+            <input
+              type="text"
+              formControlName="fullname"
+              value="{{ user.fullname }}"
+            />
+          </div>
+        </div>
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="email">Email:</label>
+            <input type="text" formControlName="email" value="{{ user.email }}" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="Phone">Phone:</label>
+            <input type="text" formControlName="phone" value="{{ user.phone }}" />
+          </div>
+        </div>
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="Phone">DOB:</label>
+            <input
+              type="text"
+              formControlName="dateOfBirth"
+              value="{{ user.dateOfBirth }}"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="Phone">Bio:</label>
+            <input type="text" formControlName="bio" value="{{ user.bio }}" />
+          </div>
+        </div>
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="Phone">city:</label>
+            <input type="text" formControlName="city" value="{{ user.city }}" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="Phone">role:</label>
+            <input type="text" value="{{ user.role.roleName }} " disabled />
+          </div>
+        </div>
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="Phone">Avatar:</label>
+            <input type="text" value="{{ user.avatar }} " />
+          </div>
+        </div>
+      </div>
+
+      <button type="submit">Click here to update user detail</button>
+    </div>
+  </form>
+</div>
+<div *ngIf="userRole === 'dealer'">
+  <form [formGroup]="carDealerUpdateForm"  (ngSubmit)="onSubmit()">
+    <div class="outer">
+      <div>Edit Dealer Profile</div>
+      <div class="img">
+        <img src="{{user.avatar}}" alt="Image Not loaded" />
+      </div>
+      <div class="row" style="margin-top: 20px">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="dealerName">Name:</label>
+            <input
+              type="text"
+              formControlName="dealerName"
+              value="{{ user.dealerName }}"
+            />
+          </div>
+        </div>
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="email">Email:</label>
+            <input type="text" formControlName="email" value="{{ user.email }}" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="Phone">Phone:</label>
+            <input type="text" formControlName="phone" value="{{ user.phone }}" />
+          </div>
+        </div>
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="avatar">Avatar:</label>
+            <input type="text" formControlName="avatar" value="{{ user.avatar }}" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="allCities">All Cities:</label>
+            <input type="text" formControlName="allCities" value="{{ user.allCities }}" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="inner col">
+          <div class="d-flex">
+            <label for="role">Role:</label>
+            <input type="text" value="{{ user.role.roleName }} " disabled />
+          </div>
+        </div>
+      </div>
+
+      <button type="submit">Click here to update dealer detail</button>
+    </div>
+  </form>
+</div>

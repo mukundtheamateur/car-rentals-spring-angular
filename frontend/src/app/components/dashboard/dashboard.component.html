@@ -1,0 +1,66 @@
+<div class="sidebar sidebar-menu-collapsed" *ngIf="userRole === 'user'">
+  <ul>
+    <li class="active" [routerLinkActive]="['active']">
+      <a class="expandable" routerLink="/" title="Dashboard">
+        <span
+          class="glyphicon glyphicon-home collapsed-element"
+          style="color: goldenrod"
+        ></span>
+
+        <span class="expanded-element" style="color: goldenrod">DashBoard</span>
+      </a>
+    </li>
+    <li [routerLinkActive]="['active']">
+      <a class="expandable" routerLink="/mybookings" title="APIs">
+        <span class="glyphicon glyphicon-check" ></span>
+        <span class="expanded-element">My Bookings</span>
+      </a>
+    </li>
+    <li [routerLinkActive]="['active']">
+      <a class="expandable" routerLink="/cars" title="Settings">
+        <span class="bi bi-ev-front-fill collapsed-element"></span>
+        <span class="expanded-element">Cars</span>
+      </a>
+    </li>
+    <li [routerLinkActive]="['active']">
+      <a class="expandable" routerLink="/accounts" title="Account">
+        <span class="glyphicon glyphicon-user collapsed-element"></span>
+        <span class="expanded-element">Account</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="sidebar sidebar-menu-collapsed" *ngIf="userRole === 'dealer'">
+  <ul>
+    <li class="active" [routerLinkActive]="['active']">
+      <a class="expandable" routerLink="/dashboard" title="Dashboard">
+        <span class="glyphicon glyphicon-home collapsed-element"></span>
+        <span class="expanded-element">DashBoard</span>
+      </a>
+    </li>
+    <li [routerLinkActive]="['active']">
+      <a class="expandable" routerLink="/myorders" title="APIs">
+        <span class="bi bi-wallet-fill collapsed-element"></span>
+        <span class="expanded-element">Orders </span>
+      </a>
+    </li>
+    <li [routerLinkActive]="['active']">
+      <a class="expandable" routerLink="/mycars" title="APIs">
+        <span class="bi bi-ev-front-fill collapsed-element"></span>
+        <span class="expanded-element">My cars</span>
+      </a>
+    </li>
+    <li [routerLinkActive]="['active']">
+      <a class="expandable" routerLink="/addCar" title="Settings">
+        <span class="bi bi-plus-circle collapsed-element"></span>
+        <span class="expanded-element">Add Cars</span>
+      </a>
+    </li>
+    <li [routerLinkActive]="['active']">
+      <a class="expandable" routerLink="/accounts" title="Account">
+        <span class="glyphicon glyphicon-user collapsed-element"></span>
+        <span class="expanded-element">Account</span>
+      </a>
+    </li>
+  </ul>
+</div>
