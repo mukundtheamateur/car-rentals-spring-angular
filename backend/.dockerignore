@@ -1,0 +1,57 @@
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Build outputs
+target/
+!target/*.jar
+*.class
+
+# Logs
+*.log
+logs/
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Environment files
+.env
+.env.local
+
+# Documentation
+*.md
+README.md
+LICENSE
+
+# Test files
+**/*Test.java
+**/*Tests.java
+src/test/
+
+# Other
+.DS_Store
+*.swp
+*.bak
+*~
+
+# App logs
+app.log
+app.log.*
+
+# Postman collection
+*.postman_collection.json
+

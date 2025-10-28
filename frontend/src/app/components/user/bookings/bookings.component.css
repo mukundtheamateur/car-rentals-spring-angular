@@ -191,8 +191,35 @@ input[type="checkbox"]:hover{
   color: white;
 }
 
-@media (max-width: 768px) {
-  .list-group {
-    display: none;
+@media (max-width: 992px) {
+  div.outer{
+    width: 95vw;
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+  .card-img-top{
+    height: 45vw;
+  }
+  .row> label{
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 576px) {
+  div.outer{
+    width: 100vw;
+    box-shadow: none;
+    background-color: rgba(0,0,0,0.85);
+    padding: 8px;
+  }
+  .card{
+    min-width: auto;
+  }
+  .card-img-top{
+    height: 55vw;
+  }
+  button{
+    width: 100%;
+    margin-top: 20px;
   }
 }

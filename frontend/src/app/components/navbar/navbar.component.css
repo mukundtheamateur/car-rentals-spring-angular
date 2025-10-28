@@ -7,3 +7,11 @@
   color: white;
 }
 
+/* Responsive navbar spacing */
+@media (max-width: 576px) {
+  .navbar {
+    top: 0;
+    border-width: 2px;
+  }
+}
+

@@ -106,28 +106,48 @@ export class BookingsComponent {
 
 
    calculateTotalPrice(): number {
-    // Calculate the new price based on the selected value
-    // Return the new price
-    let amount=0;
-    amount = amount + this.car.price;
-    if(this.bookingForm.value.cancellation){
-      amount = amount + this.car.cancellation;
+    if (!this.car) {
+      return 0;
     }
-    if(this.bookingForm.value.amendments){
-      amount = amount + this.car.amendments;
+
+    const fromDateRaw = this.bookingForm.value.fromDate as string | Date | undefined;
+    const toDateRaw = this.bookingForm.value.toDate as string | Date | undefined;
+
+    // Fallback to 1 day if dates are missing/invalid
+    let numDays = 1;
+    if (fromDateRaw && toDateRaw) {
+      const from = new Date(fromDateRaw);
+      const to = new Date(toDateRaw);
+      const msPerDay = 24 * 60 * 60 * 1000;
+      const diff = Math.ceil((to.getTime() - from.getTime()) / msPerDay);
+      numDays = Math.max(1, diff);
     }
-    if(this.bookingForm.value.theftProtection){
-      amount = amount + this.car.theftProtection;
+
+    let amount = 0;
+    // Base price is per-day
+    amount += (this.car.price || 0) * numDays;
+
+    // Add-ons: treat as flat surcharges unless clearly per-day
+    if (this.bookingForm.value.cancellation) {
+      amount += this.car.cancellation || 0;
     }
-    if(this.bookingForm.value.fullInsurance){
-      amount = amount + this.car.fullInsurance;
+    if (this.bookingForm.value.amendments) {
+      amount += this.car.amendments || 0;
     }
-    if(this.bookingForm.value.collisionDamage){
-      amount = amount + this.car.collisionDamage;
+    // Insurance/protection are typically per-day
+    if (this.bookingForm.value.theftProtection) {
+      amount += (this.car.theftProtection || 0) * numDays;
     }
-    if(this.bookingForm.value.additionalDriver){
-      amount = amount + this.car.additionalDriver;
+    if (this.bookingForm.value.fullInsurance) {
+      amount += (this.car.fullInsurance || 0) * numDays;
     }
+    if (this.bookingForm.value.collisionDamage) {
+      amount += (this.car.collisionDamage || 0) * numDays;
+    }
+    if (this.bookingForm.value.additionalDriver) {
+      amount += (this.car.additionalDriver || 0) * numDays;
+    }
+
     return amount;
   }
 
